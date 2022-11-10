@@ -69,59 +69,21 @@ programa
 	salarioL=mat.arredondar(salarioL, 2)
 	dependents=dependente(dependentes)
 	//Saidas
-	escreva("Nome do Funcionario:\t",funcionario)
+	escreva("Nome do duncionario:\t",funcionario)
 	escreva("\nHoras trabalhadas:\t",horasT)
-	escreva("\nSalarios Horas:\t\t","R$: ",salarioH)
+	escreva("\nSalarios horas:\t\t","R$: ",salarioH)
 	se(dependentes>=1){
 	escreva("\nDependentes:\t\t",dependentes)
 	}
-	escreva("\nSalario:\t\t","R$: ",salarioH*horasT)	
 	se(dependents>=1){
 	escreva("\nAdicional dependentes:\t","R$: ",dependents)
 	}	
-	escreva("\nSalario Bruto:\t\t","R$: ",salarioB)
+	escreva("\nSalario:\t\t","R$: ",salarioH*horasT)
+	escreva("\nSalario bruto:\t\t","R$: ",salarioB)
 	escreva("\nDesconto INSS:\t\t","R$: ",inss)
 	escreva("\nDesconto IR:\t\t","R$: ",ir)
-	escreva("\nSalario Liquido:\t","R$: ",salarioL)
+	escreva("\nSalario liquido:\t","R$: ",salarioL)
 	escreva("\n=======================================")
-	}
-}
-	cadeia funcionario
-	real salarioL=0.0,salarioH=0.0,salarioB=0.0,horasT=0.0,ir=0.0,inss=0.0
-	inteiro dependentes,dependents
-	
-	escreva("Informe o nome do funcionario:\t")
-	leia(funcionario)
-	limpa()
-	escreva("Informe o salario hora:\t")
-	leia(salarioH)
-	limpa()
-	escreva("Informe as horas trabalhadas:\t")
-	leia(horasT)
-	limpa()
-	escreva("Informe a quantidade de dependentes:\t")
-	leia(dependentes)
-	limpa()
-
-   	salarioB=salarioBruto(horasT, salarioH, dependentes)
-	ir=descontoIR(salarioB)
-	inss=descontoINSS(salarioB)
-	salarioL=salarioLiquido(salarioB, inss, ir)
-	salarioL=mat.arredondar(salarioL, 2)
-	dependents=dependente(dependentes)
-	
-	escreva("Nome do Funcionario:\t",funcionario)
-	escreva("\nHoras trabalhadas:\t",horasT)
-	escreva("\nSalarios Horas:\t\t",salarioH)
-	escreva("\nDependentes:\t\t",dependentes)
-	escreva("\nSalario:\t\t",salarioH*horasT)
-	se(dependentes>=1){
-	escreva("\nAdicional dependentes:\t",dependentes)
-	}
-	escreva("\nSalario Bruto:\t\t",salarioB)
-	escreva("\nDesconto INSS:\t\t",inss)
-	escreva("\nDesconto IR:\t\t",ir)
-	escreva("\nSalario Liquido:\t",salarioL)
 	}
 }
 /* $$$ Portugol Studio $$$ 
