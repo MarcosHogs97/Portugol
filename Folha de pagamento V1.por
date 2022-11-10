@@ -1,6 +1,6 @@
 programa
 {
-	inclua biblioteca Matematica-->mat	
+	inclua biblioteca Matematica-->mat	
 	
 	funcao real descontoIR(real num1){
 		real ir=0.0
@@ -15,7 +15,7 @@ programa
 		}
 		retorne ir
 	}
-	funcao inteiro dependente(inteiro dependentes){
+	funcao inteiro dependente(inteiro dependentes){
 		inteiro dependents
 		dependents=dependentes*50
 		retorne dependents
@@ -42,6 +42,50 @@ programa
 	}
 	funcao inicio()
 	{
+	cadeia funcionario
+	real salarioL=0.0,salarioH=0.0,salarioB=0.0,horasT=0.0,ir=0.0,inss=0.0
+	inteiro dependentes,dependents
+
+	//entradas
+	escreva("Informe o nome do funcionario:\t")
+	leia(funcionario)
+	limpa()
+	escreva("Informe o salario hora:\t")
+	leia(salarioH)
+	limpa()
+	escreva("Informe as horas trabalhadas:\t")
+	leia(horasT)
+	limpa()
+	escreva("Informe a quantidade de dependentes:\t")
+	leia(dependentes)
+	limpa()
+	//funcoes
+   	salarioB=salarioBruto(horasT, salarioH, dependentes)
+	ir=descontoIR(salarioB)
+	ir=mat.arredondar(ir, 2)
+	inss=descontoINSS(salarioB)
+	inss=mat.arredondar(inss, 2)
+	salarioL=salarioLiquido(salarioB, inss, ir)
+	salarioL=mat.arredondar(salarioL, 2)
+	dependents=dependente(dependentes)
+	//Saidas
+	escreva("Nome do Funcionario:\t",funcionario)
+	escreva("\nHoras trabalhadas:\t",horasT)
+	escreva("\nSalarios Horas:\t\t","R$: ",salarioH)
+	se(dependentes>=1){
+	escreva("\nDependentes:\t\t",dependentes)
+	}
+	escreva("\nSalario:\t\t","R$: ",salarioH*horasT)	
+	se(dependents>=1){
+	escreva("\nAdicional dependentes:\t","R$: ",dependents)
+	}	
+	escreva("\nSalario Bruto:\t\t","R$: ",salarioB)
+	escreva("\nDesconto INSS:\t\t","R$: ",inss)
+	escreva("\nDesconto IR:\t\t","R$: ",ir)
+	escreva("\nSalario Liquido:\t","R$: ",salarioL)
+	escreva("\n=======================================")
+	}
+}
 	cadeia funcionario
 	real salarioL=0.0,salarioH=0.0,salarioB=0.0,horasT=0.0,ir=0.0,inss=0.0
 	inteiro dependentes,dependents
